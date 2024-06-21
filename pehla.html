@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>What is a Deadlock?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #00698f;
+    }
+   .definition {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+   .example {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>What is a Deadlock?</h1>
+  <div class="definition">
+    <p>A deadlock is a situation in which two or more processes are blocked indefinitely, each waiting for the other to release a resource or take some action.</p>
+    <p>In other words, a deadlock occurs when multiple processes are waiting for each other to complete, causing a cyclic dependency that cannot be resolved.</p>
+  </div>
+  <h2>Conditions for a Deadlock</h2>
+  <ul>
+    <li><strong>Mutual Exclusion</strong>: Two or more processes must be competing for a common resource that can only be accessed by one process at a time.</li>
+    <li><strong>Hold and Wait</strong>: One process must be holding a resource and waiting for another resource, which is held by another process.</li>
+    <li><strong>No Preemption</strong>: The operating system must not be able to preempt one process and give the resource to another process.</li>
+    <li><strong>Circular Wait</strong>: The processes must be waiting for each other to release a resource, forming a circular chain of dependencies.</li>
+  </ul>
+  <h2>Example of a Deadlock</h2>
+  <div class="example">
+    <p>Consider two processes, P1 and P2, that need to access two resources, R1 and R2. The sequence of events is as follows:</p>
+    <ol>
+      <li>P1 requests and receives R1.</li>
+      <li>P2 requests and receives R2.</li>
+      <li>P1 requests R2, but it is held by P2, so P1 waits.</li>
+      <li>P2 requests R1, but it is held by P1, so P2 waits.</li>
+    </ol>
+    <p>At this point, both P1 and P2 are waiting for each other to release a resource, causing a deadlock.</p>
+  </div>
+  <h2>Avoiding Deadlocks</h2>
+  <p>To avoid deadlocks, system designers can use various techniques, such as:</p>
+  <ul>
+    <li>Using mutexes and semaphores to synchronize access to shared resources.</li>
+    <li>Implementing resource ordering to prevent circular waits.</li>
+    <li>Using deadlock detection and recovery algorithms to identify and resolve deadlocks.</li>
+  </ul>
+</body>
+</html>
